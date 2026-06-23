@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -448,6 +448,516 @@ const y = Math.random() * 300 - 150;
 noBtn.style.transform =
 `translate(${x}px,${y}px)`;
 
+});
+
+function createHearts(){
+
+const heart = document.createElement("div");
+
+heart.classList.add("heart");
+
+heart.innerHTML="❤️";
+
+heart.style.left=Math.random()*100+"%";
+
+heart.style.fontSize=
+(Math.random()*20+15)+"px";
+
+document.querySelector(".hearts")
+.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},6000);
+
+}
+
+setInterval(createHearts,300);
+
+function createConfetti(){
+
+for(let i=0;i<100;i++){
+
+setTimeout(()=>{
+createHearts();
+},i*50);
+
+}
+
+}
+
+</script>
+
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>For Kavya ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#000;
+color:white;
+overflow-x:hidden;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+padding:40px;
+text-align:center;
+}
+
+.hero{
+background:
+linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),
+url("images/bg.jpg");
+background-size:cover;
+background-position:center;
+}
+
+.hero h1{
+font-size:4rem;
+margin-bottom:20px;
+animation:fadeIn 2s ease;
+}
+
+.hero p{
+font-size:1.3rem;
+margin-bottom:30px;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:50px;
+background:#ff4d88;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:.3s;
+}
+
+.btn:hover{
+transform:scale(1.1);
+}
+
+.letter{
+background:#111;
+}
+
+#typing{
+max-width:900px;
+font-size:1.3rem;
+line-height:2;
+}
+
+.timeline{
+background:#151515;
+}
+
+.timeline-item{
+margin:30px;
+padding:20px;
+border-left:4px solid #ff4d88;
+text-align:left;
+width:90%;
+max-width:700px;
+}
+
+.gallery{
+background:#111;
+}
+
+.photos{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+max-width:1000px;
+}
+
+.photos img{
+width:100%;
+height:350px;
+object-fit:cover;
+border-radius:20px;
+transition:.5s;
+}
+
+.photos img:hover{
+transform:scale(1.05);
+}
+
+.proposal{
+background:linear-gradient(135deg,#ff4d88,#ff99cc);
+}
+
+.proposal h1{
+font-size:4rem;
+margin-bottom:20px;
+}
+
+.buttons{
+margin-top:30px;
+}
+
+.yes{
+background:#fff;
+color:#ff4d88;
+}
+
+.no {
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.no:focus,
+.no:active {
+    outline: none;
+}
+
+
+.hearts{
+position:fixed;
+width:100%;
+height:100%;
+top:0;
+left:0;
+pointer-events:none;
+overflow:hidden;
+}
+
+.heart{
+position:absolute;
+font-size:20px;
+animation:float 6s linear infinite;
+}
+
+.success{
+display:none;
+background:black;
+}
+
+.success h1{
+font-size:4rem;
+color:#ff4d88;
+}
+
+@keyframes float{
+0%{
+transform:translateY(100vh);
+opacity:1;
+}
+100%{
+transform:translateY(-100px);
+opacity:0;
+}
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:translateY(30px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+</style>
+</head>
+
+<body>
+
+<audio id="music" loop>
+<source src="music/romantic-.mp3" type="audio/mpeg">
+</audio>
+
+<div class="hearts"></div>
+
+<section class="hero">
+
+<h1>Kavya ❤️</h1>
+
+<p>
+I made something special for the most special person in my life...
+</p>
+
+<button class="btn" onclick="startExperience()">
+Open My Heart ❤️
+</button>
+
+</section>
+
+<section class="letter" id="letter">
+
+<h1>Dear Kavya ❤️</h1>
+
+<p id="typing"></p>
+
+</section>
+
+<section class="timeline">
+
+<h1>Our Story ❤️</h1>
+
+<div class="timeline-item">
+<h2>💕 The day I saw you </h2>
+<p>The day everything began.</p>
+</div>
+
+<div class="timeline-item">
+<h2>😊 First Conversations</h2>
+<p>Getting to know the most amazing girl.</p>
+</div>
+
+<div class="timeline-item">
+<h2>❤️ The First Hug</h2>
+<p>A moment I'll never forget.</p>
+</div>
+
+<div class="timeline-item">
+<h2>🌙 The Day You Slept On My Heart</h2>
+<p>The most peaceful moment of my life.</p>
+</div>
+
+<div class="timeline-item">
+<h2>✨ Every Smile Since Then</h2>
+<p>Still my favorite thing in the world.</p>
+</div>
+
+</section>
+
+<section class="gallery">
+
+<h1>Our Memories 📸</h1>
+
+<br><br>
+
+<div class="photos">
+
+<img src="images/photo1.jpg">
+<img src="images/photo2.jpg">
+<img src="images/photo3.jpg">
+<img src="images/photo4.jpg">
+<img src="images/photo5.jpg">
+
+
+</div>
+
+</section>
+
+<section class="proposal" id="proposal">
+
+<h2>You are my favorite smile ❤️</h2>
+
+<h2>You are my favorite notification ❤️</h2>
+
+<h2>You are my favorite person ❤️</h2>
+
+<br>
+
+<h1>💍 Will You Be Mine Forever? 💍</h1>
+
+<div class="buttons">
+
+<button class="btn yes" onclick="sayYes()">
+YES ❤️
+</button>
+
+<button class="btn no" id="noBtn">
+Not Yet 😜
+</button>
+
+</div>
+
+</section>
+
+<section class="success" id="success">
+
+<h1>🎉 YAYYYYYY ❤️</h1>
+
+<br>
+
+<h2>
+You just made me the happiest man alive.
+</h2>
+
+<br>
+
+<h2>
+I Love You Forever Kannammaa.... ❤️
+</h2>
+
+<br>
+
+<h2>
+— Jagan
+</h2>
+
+</section>
+
+<script>
+
+const text = `
+There are many beautiful things in this world,
+but somehow my heart always finds its way back to you.
+
+From the day we met,
+my life started feeling brighter.
+
+You are not just beautiful.
+
+You have beauty,
+personality,
+care,
+love,
+and everything I could ever wish for.
+
+Seeing your smile is my favorite thing.
+
+The day I hugged you...
+The day you slept peacefully on my Heart...
+
+Those moments became part of my heart forever.
+
+Kavya,
+
+I don't just want to be part of your present.
+
+I want to be part of your future.
+
+❤️ Will You Be Mine Forever? ❤️
+`;
+
+let i = 0;
+
+function typeWriter() {
+
+const target = document.getElementById("typing");
+
+if(i < text.length){
+target.innerHTML += text.charAt(i);
+i++;
+setTimeout(typeWriter,40);
+}
+
+}
+
+function startExperience() {
+
+    document.getElementById("music").play();
+
+    if (i === 0) {
+        typeWriter();
+    }
+
+    const target = document.getElementById("letter");
+
+    setTimeout(() => {
+        smoothScrollTo(target, 4000); // 4000ms = 4 seconds
+    }, 1000);
+}
+
+function smoothScrollTo(element, duration) {
+
+    const targetPosition = element.offsetTop;
+    const startPosition = window.pageYOffset;
+    const distance = targetPosition - startPosition;
+
+    let startTime = null;
+
+    function animation(currentTime) {
+
+        if (startTime === null) {
+            startTime = currentTime;
+        }
+
+        const timeElapsed = currentTime - startTime;
+
+        const run = easeInOutQuad(
+            timeElapsed,
+            startPosition,
+            distance,
+            duration
+        );
+
+        window.scrollTo(0, run);
+
+        if (timeElapsed < duration) {
+            requestAnimationFrame(animation);
+        }
+    }
+
+    function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+
+        if (t < 1) {
+            return c / 2 * t * t + b;
+        }
+
+        t--;
+        return -c / 2 * (t * (t - 2) - 1) + b;
+    }
+
+    requestAnimationFrame(animation);
+}
+
+function sayYes(){
+
+document.getElementById("success").style.display="flex";
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+createConfetti();
+}
+
+const noBtn = document.getElementById("noBtn");
+
+function moveNoButton() {
+
+    const maxX = window.innerWidth - noBtn.offsetWidth - 20;
+    const maxY = window.innerHeight - noBtn.offsetHeight - 20;
+
+    const x = Math.random() * maxX;
+    const y = Math.random() * maxY;
+
+    noBtn.style.position = "fixed";
+    noBtn.style.left = x + "px";
+    noBtn.style.top = y + "px";
+
+    noBtn.blur(); // remove focus
+}
+
+noBtn.addEventListener("mouseover", moveNoButton);
+noBtn.addEventListener("touchstart", function(e) {
+    e.preventDefault();
+    moveNoButton();
 });
 
 function createHearts(){
